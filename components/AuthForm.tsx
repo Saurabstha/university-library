@@ -28,6 +28,7 @@ import { FIELD_NAMES, FIELD_TYPES } from "@/constants";
 import ImageUpload from "./ImageUpload";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
+import { error } from "console";
 
 interface Props<T extends FieldValues> {
   schema: ZodType<T>;
@@ -65,7 +66,7 @@ const AuthForm = <T extends FieldValues>({
       router.push("/");
     } else {
       toast({
-        title: `Error ${isSignIn} ? "signing in : "signin up"`,
+        title: `Error ${isSignIn ? "signing in" : "signin up"}`,
         description: result.error ?? "An error occured.",
         variant: "destructive",
       });
