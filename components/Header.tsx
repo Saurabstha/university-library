@@ -1,11 +1,12 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { Session } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const Header = () => {
+const Header = ({ session }: { session: Session }) => {
   const pathName = usePathname();
   return (
     <header className="my-10 flex justify-between gap-5">
@@ -22,6 +23,11 @@ const Header = () => {
             )}
           >
             Library
+          </Link>
+        </li>
+        <li>
+          <Link href="/my-profile" className="text-white">
+            {session?.user?.name}
           </Link>
         </li>
       </ul>
