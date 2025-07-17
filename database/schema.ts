@@ -49,3 +49,20 @@ export const books = pgTable("books", {
   summary: varchar("summary").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });
+
+export const borrowRecords = pgTable("book_borrow", {
+  id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
+  bookId: uuid("book_id")
+    .references(() => books.id)
+    .notNull(),
+  userId: uuid("user_id")
+    .references(() => users.id)
+    .notNull(),
+  borrowDate: timestamp("borrow_date", { withTimezone: true })
+    .defaultNow()
+    .notNull(),
+  dueDate: date("due_date").notNull(),
+  returnDate: date("return_date"),
+  status: BORROW_STATUS_ENUM("status").default("BORROWED").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
