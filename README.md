@@ -25,6 +25,7 @@ A modern web application built with **Next.js 15**, **Upstash Redis**, **Drizzle
 | **Database**             | PostgreSQL (Neon), Drizzle ORM    |
 | **Caching & Rate Limit** | Upstash Redis                     |
 | **Image Hosting**        | ImageKit                          |
+| **Deployment**           | Vercel                            |
 | **Validation**           | Zod, React Hook Form              |
 | **Tooling**              | ESLint, Prettier, TypeScript      |
 

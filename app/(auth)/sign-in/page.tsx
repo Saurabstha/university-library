@@ -10,8 +10,8 @@ const page = () => (
     type="SIGN_IN"
     schema={signInSchema}
     defaultValues={{
-      email: "",
-      password: "",
+      email: "saurab@gmail.com",
+      password: "test@123",
     }}
     onSubmit={signInWithCredentials}
   />
