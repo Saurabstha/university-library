@@ -100,3 +100,13 @@ cd university-library
 └── .env.local           # Local environment variables
 
 ```
+
+---
+
+## 🌍 Live Demo
+
+You can view the live application here:
+
+🔗 **[university-library.vercel.app](https://university-library-d8mg.vercel.app/)**
+
+> Hosted on [Vercel](https://vercel.com/) with serverless architecture and edge functions.
